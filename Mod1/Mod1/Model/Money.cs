@@ -15,5 +15,6 @@ public class Money
     }
 
     public string IsoCurrency { get; set; }
+
     public decimal Amount { get; set;}
 }
