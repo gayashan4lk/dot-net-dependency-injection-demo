@@ -8,7 +8,7 @@ namespace Mod1.Shared;
 
 public class Configuration
 {
-    public string SourceCsvPath => @"c:\src-pluralsight\product-input.csv";
+    public string SourceCsvPath => @"C:\Users\GayashanWagachchigeB\source\repos\dot-net-dependency-injection-demo\Mod1\Mod1\product-input.csv";
 
-    public string TargetCsvPath => @"c:\src-pluralsight\product-output.csv";
+    public string TargetCsvPath => @"C:\Users\GayashanWagachchigeB\source\repos\dot-net-dependency-injection-demo\Mod1\Mod1\product-output.csv";
 }

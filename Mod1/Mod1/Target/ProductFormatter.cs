@@ -24,6 +24,7 @@ public class ProductFormatter : IProductFormatter
 
         return stringBuilder.ToString();
     }
+
     public string GetHeaderLine()
     {
         return HeaderLine;
@@ -33,7 +34,7 @@ public class ProductFormatter : IProductFormatter
     {
         if (!isFirst)
         {
-            stringBuilder.Append("");
+            stringBuilder.Append(",");
 
         }
 

@@ -10,8 +10,8 @@ public class Money
 {
     public Money(string isoCurrency, decimal amount)
     {
-        isoCurrency = isoCurrency;
-        amount = amount;
+        IsoCurrency = isoCurrency;
+        Amount = amount;
     }
 
     public string IsoCurrency { get; set; }

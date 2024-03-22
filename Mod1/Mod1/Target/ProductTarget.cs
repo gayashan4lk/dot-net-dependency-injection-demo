@@ -10,12 +10,12 @@ namespace Mod1.Target;
 
 public class ProductTarget : IProductTarget
 {
-    private readonly Configuration _configuration;
     private readonly IProductFormatter _productFormatter;
+    private readonly Configuration _configuration;
 
     private StreamWriter? _streamWriter;
 
-    public ProductTarget(Configuration configuration, IProductFormatter productFormatter)
+    public ProductTarget(IProductFormatter productFormatter, Configuration configuration)
     {
         _configuration = configuration;
         _productFormatter = productFormatter;

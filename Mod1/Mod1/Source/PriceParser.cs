@@ -11,11 +11,12 @@ public class PriceParser : IPriceParser
 {
     public Money Parse(string price)
     {
-        var parts = price.Split(',');
+        var parts = price.Split(' ');
         
         var currency = parts[0];
         var amount = decimal.Parse(parts[1]);
 
-        return new Money(currency, amount);
+        var money = new Money(currency, amount);
+        return money;
     }
 }
