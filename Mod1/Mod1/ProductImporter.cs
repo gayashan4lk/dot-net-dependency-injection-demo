@@ -32,5 +32,7 @@ public class ProductImporter
 
         _productSource.Close();
         _productTarget.Close();
+
+        Console.WriteLine("Successfully written new file.");
     }
 }

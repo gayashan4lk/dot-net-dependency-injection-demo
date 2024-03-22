@@ -1,14 +1,20 @@
-﻿using Mod1;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Mod1;
 using Mod1.Shared;
 using Mod1.Source;
 using Mod1.Target;
 
-IPriceParser priceParser = new PriceParser();
-IProductFormatter productFormatter = new ProductFormatter();
+HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 
-IProductSource productSource = new ProductSource(priceParser, new Configuration());
-IProductTarget productTarget = new ProductTarget(productFormatter, new Configuration());
+builder.Services.AddTransient<Configuration>();
+builder.Services.AddTransient<ProductImporter>();
+builder.Services.AddTransient<IProductSource, ProductSource>();
+builder.Services.AddTransient<IProductTarget, ProductTarget>();
+builder.Services.AddTransient<IProductFormatter, ProductFormatter>();
+builder.Services.AddTransient<IPriceParser, PriceParser>();
 
-var productImporter = new ProductImporter(productSource, productTarget);
+using IHost host = builder.Build();
 
+var productImporter = host.Services.GetRequiredService<ProductImporter>();
 productImporter.Run();
